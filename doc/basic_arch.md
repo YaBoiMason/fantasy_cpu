@@ -5,16 +5,18 @@ This is just a shitty fantasy CPU project, I'm writing this out of sheer boredom
 This is a 16-bit CPU, little endian. It has 8 registers, SC1 (src 1), SC2 (src 2) DS (dest), SP (stack pointer), BP (base pointer), PC(program counter), GP (general-purpose), GP2 (general-purpose 2).
 There is the unmodifiable FL dual-word register, which the CPU can only modify the state of (there are instructions that can modify some of these).
 The layout of this register is as such:
-| 0
-| x
-| CARRY FLAG (cf)
-| ZERO FLAG (zf)
-| SIGN FLAG (0 = pos, 1 = negative) (sf)
-| SINGLE-STEP FLAG (calls the trap interrupt defined in your interrupt vector table) (ssf)
-| INTERRUPT ENABLE FLAG (if)
-| PARITY FLAG (pf)
-| Reserved 
-| Reserved
+```
+| 0  
+| x  
+| CARRY FLAG (cf)  
+| ZERO FLAG (zf)  
+| SIGN FLAG (0 = pos, 1 = negative) (sf)  
+| SINGLE-STEP FLAG (calls the trap interrupt defined in your interrupt vector table) (ssf)  
+| INTERRUPT ENABLE FLAG (if)  
+| PARITY FLAG (pf)  
+| Reserved   
+| Reserved  
+```
 
 There are also the PS registers which show the state of the 16 I/O ports, but this will be covered later.
 
